@@ -1,0 +1,9 @@
+<process name = "doc2dcm">
+  <sequence name="Main">
+     <assign to="." from="DocToDCM(PrimaryDocument/Successful,'false','false')"></assign>
+     <assign name="Assign" to="TestDir">/tmp/test</assign>
+     <assign name="Assign" to="TestDir1">/tmp/test1</assign>
+     <assign name="Assign" to="TestDir2">/tmp/test2</assign>
+     <assign name="Assign" to="TestDir3">/tmp/test3</assign>
+  </sequence>
+</process>
