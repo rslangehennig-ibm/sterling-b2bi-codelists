@@ -17,15 +17,15 @@ jobs:
       uses: actions/checkout@v4
       with:
         sparse-checkout: |
-          /config/business-processes/randy.bpml
+          /config/codelists/randy-code-list.csv
         sparse-checkout-cone-mode: false
     - name: Stage files
       id: create-artifacts
-      run: ls -al && mkdir /tmp/artifacts && cp ./config/business-processes/randy.bpml /tmp/artifacts
+      run: ls -al && mkdir /tmp/artifacts && cp ./config/codelists/randy-code-list.csv /tmp/artifacts
     - name: Create Component Version
       uses: HCL-TECH-SOFTWARE/devops-deploy-createcomponentversion-action@v2.0
       with:
-        component: 'Sterling-B2Bi-Config-BusinessProcesses'
+        component: 'Sterling-B2Bi-Config-Codelists'
         versionname: '${{ env.short_commit_id }}:${{ github.event.head_commit.message }}'
         description: 'Commit ID: ${{ github.event.head_commit.id }} Repository URL: ${{ github.repositoryUrl }}'
         link: '${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.head_commit.id }}'
